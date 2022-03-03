@@ -1,0 +1,15 @@
+version: '3.0'
+
+services:
+  node: &node
+    container_name: rv-tic-tac-toe-node
+    image: node:current-alpine3.14
+    working_dir: "/opt/app"
+    volumes:
+        - "${PWD}:/opt/app"
+  app:
+    <<: *node
+    container_name: rv-tic-tac-toe-app
+    ports:
+      - "3000:3000"
+    entrypoint: ["yarn", "start"]
