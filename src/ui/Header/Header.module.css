@@ -1,29 +1,22 @@
 .rviewerLogo {
-    height: 40vmin;
-    pointer-events: none;
+    margin: 3rem 0;
 }
 
 .header {
-    min-height: 10vh;
+    align-items: center;
+    border-bottom: 1px solid #4FFAB6;
+    color: white;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    font-size: calc(1rem + 2vmin);
     justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+    margin: auto;
+    max-width: 90vw;
+    text-align: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    .rviewerLogo {
-        animation: rviewer-logo-spin infinite 20s linear;
-    }
-}
-
-@keyframes rviewer-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
+@media (min-width: 1200px) {
+    .header {
+        max-width: 60vw;
     }
 }
