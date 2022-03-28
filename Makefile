@@ -10,7 +10,7 @@ bash:
 	docker-compose run node /bin/sh
 
 up: deps
-	docker-compose up app -d
+	docker-compose up -d app
 
 test: deps
 	docker-compose run node yarn test
