@@ -19,13 +19,10 @@ jobs:
     outputs:
       ok: ${{ steps.check-secrets.outputs.ok }}
     steps:
-      - name: check for secrets needed to run demo
+      - name: check for secrets needed to run SonarQube
         id: check-secrets
         run: |
-          if [ ! -z "${{ secrets.SONAR_TOKEN }}" ]; then
-            echo "::set-output name=ok::true"
-          fi
-          if [ ! -z "${{ secrets.SONAR_HOST_URL }}" ]; then
+          if [ ! -z "${{ secrets.SONAR_TOKEN }}" ] && [ ! -z "${{ secrets.SONAR_HOST_URL }}" ]; then
             echo "::set-output name=ok::true"
           fi
           
