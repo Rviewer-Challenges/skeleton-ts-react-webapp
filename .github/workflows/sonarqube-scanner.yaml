@@ -15,7 +15,7 @@ on:
 
 jobs:
   secrets-gate:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     outputs:
       ok: ${{ steps.check-secrets.outputs.ok }}
     steps:
@@ -27,10 +27,10 @@ jobs:
           fi
           
   sonarqube:
+    runs-on: self-hosted
     needs:
         - secrets-gate
     if: ${{ needs.secrets-gate.outputs.ok == 'true' }}
-    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
 
